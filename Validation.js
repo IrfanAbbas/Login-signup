@@ -16,14 +16,11 @@
         });
 
         $('#registrationForm').submit((e) => {
-            e.preventDefault(); // Prevent form submission
-            
+            e.preventDefault(); 
             if (validEmail && validUser) {
                 $('#failure').hide();
                 $('#success').show();
                 $('#failure').text("Registration successful!");
-                // You can submit the form here if needed
-                // e.target.submit();
             } else {
                 $('#success').hide();
                 $('#failure').show();
