@@ -82,9 +82,9 @@ function addRowsToTable() {
             <td>${product.location}</td>
             <td>
               <div class="all-button">
-              <button onclick="deleteProduct(${index})">Delete Product</button>
+              <button class="btn btn-warning mr-2" onclick="deleteProduct(${index})">Delete</button>
 
-                <button onclick="openEditModal(${index})">Edit Product</button>
+                <button class="btn btn-success ml-3" onclick="openEditModal(${index})">Edit</button>
                 </div>
             </td>
           `;

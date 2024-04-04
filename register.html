@@ -47,7 +47,7 @@
                                                 placeholder="Enter your password here" />
                                         </div>
                                         <button type="submit" class="btn btn-theme"id="save"
-                                            onclick="saveData(event)">Register</button>
+                                            onclick="saveData()">Register</button>
                                             <!-- <button type="submit" class="btn btn-primary" onclick="login()">Log In</button> -->
                                             <a href="login.html"><input type="button "id="abutton" class="btn btn-primary" value="Login"></a>
                                             <input type="reset" name="reset" id="reset" value="Reset" class="btn btn-warning">
@@ -66,10 +66,10 @@
                                 <div class="account-block rounded-right">
                                     <div class="overlay rounded-right"></div>
                                     <div class="account-testimonial">
-                                        <h4 class="text-white mb-4">This beautiful theme yours!</h4>
-                                        <p class="lead text-white">"Best investment i made for a long time. Can only
-                                            recommend it for other users."</p>
-                                        <p>- Admin User</p>
+                                        <!-- <h4 class="text-white mb-4">This beautiful theme yours!</h4>
+                                        <p class="lead text-white">"Best investment i made for a long time. Can only -->
+                                            <!-- recommend it for other users."</p> -->
+                                        <!-- <p>- Admin User</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -90,45 +90,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>
-        function saveData(event) {
-            event.preventDefault(); // Prevent form submission
-            let name = document.getElementById("yourName").value;
-            let email = document.getElementById("exampleInputEmail1").value;
-            let password = document.getElementById("exampleInputPassword1").value;
-            if (name == "" || email == "" || password == "") {
-                alert('Please fill out all fields');
-            }
-
-
-              //  localStorage.clear();
-        //     localStorage.setItem("name",name);
-        //     localStorage.setItem("email", email);
-              localStorage.setItem("password", password);
-    
-    //     console.log(name + " " + email + " " + password);
-    
-            let user_record = JSON.parse(localStorage.getItem('user')) || []; // Get existing data or initialize empty array
-    
-            // Check for duplicate email
-            if (user_record.some(v => v.email === email)) {
-                alert("Duplicate email!");
-            } else {
-                // Push new user record into the array
-                user_record.push({
-                    "name": name,
-                    "email": email,
-                    "password": password
-                });
-                // Store the updated array in local storage
-                localStorage.setItem('user', JSON.stringify(user_record));
-                alert("Registration successful!", window.location="login.html"); // Optionally provide feedback to the user
-            }
-        }
-        function login(){
-            window.location.href="login.html";
-        }
-    </script>
     <script src="Validation.js"></script>
+    <script src="./oop/register.js"></script>
 </body>
  </html>
